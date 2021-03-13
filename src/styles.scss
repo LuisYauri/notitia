@@ -1,1 +1,222 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+nz-select {
+  width: 100%;
+}
+
+nz-range-picker {
+  margin: 0 8px 12px 0;
+}
+
+* {
+  scrollbar-width: white;
+  scrollbar-color: white;
+}
+
+///* Works on Chrome/Edge/Safari */
+//*::-webkit-scrollbar {
+//  width: 12px;
+//}
+//*::-webkit-scrollbar-track {
+//  background: white;
+//}
+//*::-webkit-scrollbar-thumb {
+//  background-color: white;
+//  border-radius: 20px;
+//  //border: 3px solid white;
+//}
+
+.search-background {
+  padding: 35px 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.input-search-notitia {
+  width: 500px;
+}
+
+.icon-mic {
+  margin: 0 0 0 10px;
+}
+
+.filters-block {
+  display: flex;
+  flex-direction: row;
+}
+
+.category-background {
+  width: 170px;
+}
+
+.author-background {
+  width: 350px;
+  margin: 0 20px;
+}
+
+.card-info-item {
+  border-radius: 20px;
+  padding: 20px;
+  margin: 0 0 20px 0;
+  //border: 1px solid #eaeaea;
+  background: #e0f1ff;
+  cursor: pointer;
+
+  &__title {
+    font-size: 20px;
+    line-height: 41px;
+    color: #000000;
+    font-weight: bold;
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    line-height: 19px;
+    text-align: justify;
+    color: #656565;
+    margin: 0 10px 0 0;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__line {
+    height: 1px;
+    background: #2C2C2C;
+    margin: 5px 0 0 0;
+    width: 300px;
+  }
+}
+
+.card-info-text {
+  display: flex;
+  flex-direction: row;
+
+  &__parrafo {
+    padding: 15px 20px 0 0;
+    font-size: 12px;
+    width: 1000px;
+  }
+}
+
+.btn-download {
+  display: flex;
+  background: #FFB328;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border-radius: 40px;
+  cursor: pointer;
+
+  &__line {
+    width: 2px;
+    background: #000000;
+    height: 20px;
+    margin: 0 10px;
+  }
+
+  &__arrow {
+    margin: 0 0 0 10px;
+  }
+}
+
+.btn-sub {
+  display: flex;
+  flex-direction: column;
+  padding: 22px 15px;
+  background: #FFB328;
+  border-radius: 30px;
+  cursor: pointer;
+  position: absolute;
+  bottom: -111px;
+  width: 100%;
+
+  &__item {
+    display: flex;
+    padding: 0 10px 5px;
+    border-radius: 10px;
+
+    &:hover {
+      background: #e4980e;
+    }
+  }
+}
+
+.btn-block {
+  position: relative;
+}
+
+.card-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: white;
+  padding: 40px;
+  border-radius: 30px;
+}
+
+.login-title {
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 41px;
+  color: #000000;
+  margin: 0 0 15px 0;
+}
+
+.background-block {
+  height: 85.6vh;
+  width: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-group-login {
+  margin: 0 0 10px 0;
+
+  &__text {
+    margin: 0 0 5px 0;
+  }
+}
+
+.forget-password {
+  font-size: 12px;
+  line-height: 18px;
+  color: #292929;
+}
+
+.btn-login {
+  margin: 10px 0;
+}
+
+.register-group {
+  font-size: 12px;
+  display: flex;
+
+  &__title {
+    color: #000000;
+    font-weight: bold;
+    margin: 0 0 0 10px;
+  }
+}
+
+:host ::ng-deep .avatar-uploader > .ant-upload {
+  width: 128px;
+  height: 128px;
+}
+
+.star-icon {
+  position: absolute;
+  left: 113px;
+  top: 12px;
+}

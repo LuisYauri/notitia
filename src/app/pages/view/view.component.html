@@ -1,0 +1,94 @@
+<div>
+  <app-header-menu></app-header-menu>
+  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center">
+    <div style="width: 1000px;">
+      <div class="view-info">
+        <div class="view-info__title">
+          <div style="display: flex; justify-content: center; align-items: center; cursor: pointer" (click)="back()">
+            <img style="height: 19px; margin: 0 15px 0 0" src="assets/img/arror_left.png" alt="">
+          </div>
+          <div>{{infoView.title}}</div>
+        </div>
+        <div style="padding: 10px 0">
+          <div class="view-info__description">
+            {{infoView.text1}}
+          </div>
+          <div class="view-info__description">
+            {{infoView.text2}}
+          </div>
+        </div>
+        <div class="block-center">
+          <div>
+            <div>
+              <span class="block-center__black">Autor:</span> {{infoView.university}}
+            </div>
+            <div>
+              <span class="block-center__black">Fecha de creación:</span> {{infoView.university}}
+            </div>
+            <div>
+              <span class="block-center__black">Fecha de creación:</span> {{infoView.update}}
+            </div>
+          </div>
+          <div>
+            <div class="btn-block">
+              <div class="btn-download" (click)="changeBtn(infoView)">
+                <div>
+                  Descargar
+                </div>
+                <div class="btn-download__line"></div>
+                <div style="display: flex;">
+                  <div>
+                    <img width="15" src="assets/img/down.svg" alt="">
+                  </div>
+                  <div class="btn-download__arrow">
+                    <img width="15" src="assets/img/arrow_bottom.svg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="btn-sub" style="bottom: -132px !important;" *ngIf="infoView.flag">
+                <div class="btn-sub__item" *ngFor="let down of infoView.btn" (click)="openSubMenu(down.url)">
+                  <div style="display:flex;justify-content: center; align-items: center;margin: 0 5px 0 0; width: 20px">
+                    <img [src]="down.img" alt="">
+                  </div>
+                  <div>{{down.title}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="list-tag-view">
+            <div class="tag-view" *ngFor="let tag of infoView.tags">
+              <div>{{tag}}</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          Datos del mismo autor
+        </div>
+        <div class="box-card-info">
+          <div *ngFor="let texAuthor of infoView.infoAuthor">
+            <div style="display: flex; align-items: center">
+              <div class="circle-notitia"></div>
+              <div>{{texAuthor}}</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          Datos de las mismas categorías
+        </div>
+        <div class="box-card-info">
+          <div *ngFor="let texAuthor of infoView.infoCategory">
+            <div style="display: flex; align-items: center">
+              <div class="circle-notitia"></div>
+              <div>{{texAuthor}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer-block></app-footer-block>
+</div>
+
+

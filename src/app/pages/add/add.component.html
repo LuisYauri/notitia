@@ -1,0 +1,62 @@
+<div>
+  <app-header-menu-admin></app-header-menu-admin>
+  <div class="background-block" [ngStyle]="{'background-image': 'url(' + 'assets/img/carga.jpg' + ')'}">
+    <div class="card-login">
+      <div class="login-title">
+        Subir conjunto de datos
+      </div>
+      <div class="input-group-login">
+        <div class="input-group-login__text">
+          Título *
+        </div>
+        <input nz-input placeholder="" [(ngModel)]="title" />
+      </div>
+      <div class="input-group-login">
+        <div class="input-group-login__text">
+          Subir conjunto de datos *
+        </div>
+        <nz-upload [(nzFileList)]="fileList" [nzBeforeUpload]="beforeUpload">
+          <button nz-button><i nz-icon nzType="upload"></i>Cargar</button>
+        </nz-upload>
+      </div>
+      <div class="input-group-login">
+        <div class="input-group-login__text">
+          Categorías *
+        </div>
+        <nz-select
+          [nzMaxTagCount]="1"
+          [nzMaxTagPlaceholder]="categoryPlaceHolder"
+          nzMode="multiple"
+          nzPlaceHolder="Categorías"
+          [(ngModel)]="listOfSelectedCategory"
+        >
+          <nz-option *ngFor="let item of listOfOptionCategory" [nzLabel]="item" [nzValue]="item"></nz-option>
+        </nz-select>
+        <ng-template #categoryPlaceHolder let-selectedList> + {{ selectedList.length }} </ng-template>
+      </div>
+      <div class="input-group-login">
+        <div class="input-group-login__text">
+          Idiomas *
+        </div>
+        <nz-select
+          [nzMaxTagCount]="1"
+          [nzMaxTagPlaceholder]="idiomsPlaceHolder"
+          nzMode="multiple"
+          nzPlaceHolder="Idiomas"
+          [(ngModel)]="listOfSelectedIdioms"
+        >
+          <nz-option *ngFor="let item of listOfOptionIdioms" [nzLabel]="item" [nzValue]="item"></nz-option>
+        </nz-select>
+        <ng-template #idiomsPlaceHolder let-selectedList> + {{ selectedList.length }} </ng-template>
+      </div>
+      <div class="input-group-login">
+        <div class="input-group-login__text">
+          Descripción *
+        </div>
+        <textarea rows="4" nz-input [(ngModel)]="description"></textarea>
+      </div>
+      <button [nzLoading]="flagLoading" class="btn-login" nz-button nzType="primary" (click)="upload()">Subir</button>
+    </div>
+  </div>
+  <app-footer-block></app-footer-block>
+</div>

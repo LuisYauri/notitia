@@ -1,0 +1,59 @@
+.view-info {
+  border-radius: 20px;
+  padding: 35px;
+  margin: 20px 0 40px 0;
+  background: #e0f1ff;
+
+  &__title {
+    font-size: 30px;
+    line-height: 41px;
+    color: #000000;
+    font-weight: bold;
+    display: flex;
+  }
+
+  &__description {
+    font-size: 14px;
+    line-height: 23px;
+    text-align: justify;
+    color: #000000;
+  }
+}
+
+.block-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &__black {
+    font-weight: bold;
+  }
+}
+
+.list-tag-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.tag-view {
+  background: #F9F9F9;
+  border-radius: 20px;
+  padding: 5px 20px;
+}
+
+.circle-notitia {
+  background: #FFB328;
+  height: 8px;
+  width: 8px;
+  border-radius: 100px;
+  margin: 0 10px 0 0;
+}
+
+.box-card-info {
+  background: #93c4ec;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 15px 0;
+}

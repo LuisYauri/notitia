@@ -1,0 +1,16 @@
+.footer-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  background: #171717;
+  color: white;
+  padding: 0 30px;
+}
+
+.item-social {
+  width: 15px;
+  margin: 0 15px;
+  cursor: pointer;
+}

@@ -1,0 +1,35 @@
+<div>
+  <app-header-menu></app-header-menu>
+  <div class="background-block" [ngStyle]="{'background-image': 'url(' + 'assets/img/nasa1.jpg' + ')'}">
+    <div class="card-login">
+      <div class="login-title">
+        Iniciar Sesión
+      </div>
+      <div class="input-group-login">
+        <div class="input-group-login__text">
+          Nombre de usuario o email:
+        </div>
+        <input nz-input placeholder="" [(ngModel)]="email" />
+      </div>
+      <div class="input-group-login">
+        <div class="input-group-login__text">
+          Contraseña:
+        </div>
+        <input nz-input placeholder="" type="password" [(ngModel)]="password" />
+      </div>
+      <div class="forget-password">
+        ¿Has olvidado la contraseña?
+      </div>
+      <button class="btn-login" nz-button nzType="primary" (click)="loginView()">Entrar</button>
+      <div class="register-group">
+        <div>
+          ¿Aún no tienes cuenta?
+        </div>
+        <div class="register-group__title">
+          ¡registrate!
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer-block></app-footer-block>
+</div>

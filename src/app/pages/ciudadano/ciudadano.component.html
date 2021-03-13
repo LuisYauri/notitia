@@ -1,0 +1,103 @@
+<div>
+  <app-header-menu-ciudadano></app-header-menu-ciudadano>
+  <div class="background-block" [ngStyle]="{'background-image': 'url(' + 'assets/img/nasa1.jpg' + ')'}">
+    <div class="title-background">
+      ¿Qué estás buscando? ¿Podemos ayudarte?
+    </div>
+    <div class="search-background">
+      <div>
+        <nz-input-group nzSearch nzSize="large" [nzAddOnAfter]="suffixButton">
+          <input class="input-search-notitia" type="text" nz-input placeholder="Ej. Dataset de Satélites"/>
+        </nz-input-group>
+        <ng-template #suffixButton>
+          <button [nzLoading]="flagLoading" nz-button nzType="primary" nzSize="large" nzSearch (click)="openView()"><i
+            nz-icon nzType="search" nzTheme="outline"></i>
+          </button>
+        </ng-template>
+      </div>
+      <div class="icon-mic">
+        <button nz-button nzSize="large" nzType="primary"><img width="14" src="assets/img/icon_mic.svg" alt=""></button>
+      </div>
+    </div>
+    <div class="filters-block">
+      <div class="category-background">
+        <nz-select
+          [nzMaxTagCount]="1"
+          [nzMaxTagPlaceholder]="categoryPlaceHolder"
+          nzMode="multiple"
+          nzPlaceHolder="Categorías"
+          [(ngModel)]="listOfSelectedCategory"
+        >
+          <nz-option *ngFor="let item of listOfOptionCategory" [nzLabel]="item" [nzValue]="item"></nz-option>
+        </nz-select>
+        <ng-template #categoryPlaceHolder let-selectedList> + {{ selectedList.length }} </ng-template>
+      </div>
+      <div class="author-background">
+        <nz-select
+          [nzMaxTagCount]="1"
+          [nzMaxTagPlaceholder]="authorPlaceHolder"
+          nzMode="multiple"
+          nzPlaceHolder="Autores"
+          [(ngModel)]="listOfSelectedAuthor"
+        >
+          <nz-option *ngFor="let item of listOfOptionAuthor" [nzLabel]="item" [nzValue]="item"></nz-option>
+        </nz-select>
+        <ng-template #authorPlaceHolder let-selectedList> + {{ selectedList.length }} </ng-template>
+      </div>
+      <div class="calendar-background">
+        <nz-range-picker [(ngModel)]="date" (ngModelChange)="onChange($event)"></nz-range-picker>
+      </div>
+      <div class="author-background">
+        <nz-select
+          [nzMaxTagCount]="1"
+          [nzMaxTagPlaceholder]="idiomsPlaceHolder"
+          nzMode="multiple"
+          nzPlaceHolder="Idiomas"
+          [(ngModel)]="listOfSelectedIdioms"
+        >
+          <nz-option *ngFor="let item of listOfOptionIdioms" [nzLabel]="item" [nzValue]="item"></nz-option>
+        </nz-select>
+        <ng-template #idiomsPlaceHolder let-selectedList> + {{ selectedList.length }} </ng-template>
+      </div>
+      <div class="order-background">
+        <nz-select nzAllowClear nzPlaceHolder="Ordenar por...">
+          <nz-option nzValue="Titulo" nzLabel="Titulo"></nz-option>
+          <nz-option nzValue="Fecha" nzLabel="Fecha"></nz-option>
+          <nz-option nzValue="Más descargado" nzLabel="Más descargado"></nz-option>
+          <nz-option nzValue="Autor" nzLabel="Autor"></nz-option>
+        </nz-select>
+      </div>
+    </div>
+  </div>
+  <div class="body-block">
+    <div>
+      <div class="title-content">Categorías Generales</div>
+      <div class="block-block">
+        <div class="list-card-content">
+          <div class="card-content" *ngFor="let item of listNewCategory">
+            <img class="card-content__img" [src]="item.img" alt="">
+            <div class="card-content__title">{{item.title}}</div>
+            <div class="star-icon" style="left: 112px !important; background: white; border-radius: 100px; padding: 5px 6px 6px 7px">
+              <img  width="20" src="assets/img/start_3.svg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="title-content">Las más descargadas</div>
+      <div class="block-block">
+        <div class="list-card-content">
+          <div class="card-content" *ngFor="let item of listDownloads">
+            <img class="card-content__img" [src]="item.img" alt="">
+            <div class="card-content__title">{{item.title}}</div>
+            <div class="star-icon" style="background: white; border-radius: 100px; padding: 2px 5px 6px 5px">
+              <img  width="20" src="assets/img/start_2.svg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer-block></app-footer-block>
+</div>
